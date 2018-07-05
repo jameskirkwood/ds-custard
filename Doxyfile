@@ -1,0 +1,28 @@
+# Doxyfile 1.8.14
+
+PROJECT_NAME           = Custard
+PROJECT_NUMBER         = prerelease
+PROJECT_BRIEF          = "C++ Goodies for Nintendo DS Homebrew Development"
+
+OUTPUT_DIRECTORY       = build/Doxyfile
+OUTPUT_LANGUAGE        = English
+
+STRIP_FROM_PATH        = include
+STRIP_FROM_INC_PATH    = include
+
+BUILTIN_STL_SUPPORT    = YES
+
+INPUT                  = include README.md
+RECURSIVE              = YES
+
+USE_MDFILE_AS_MAINPAGE = README.md
+
+GENERATE_LATEX         = NO
+
+LAYOUT_FILE            = source/DoxygenLayout.xml
+
+HTML_COLORSTYLE_HUE    = 48
+HTML_COLORSTYLE_SAT    = 160
+HTML_COLORSTYLE_GAMMA  = 100
+
+INCLUDE_PATH           = build
