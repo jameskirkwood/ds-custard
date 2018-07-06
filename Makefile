@@ -26,8 +26,6 @@ OFILES    := $(CPPFILES:%.cpp=$(BUILD)/%.o)
 OFILES    += $(CFILES:%.c=$(BUILD)/%.o)
 OFILES    += $(SFILES:%.s=$(BUILD)/%.o)
 
-DOXY_OUT  := $(build)/Doxyfile
-
 #------------------------------------------------------------------------------
 # targets
 #------------------------------------------------------------------------------
@@ -38,9 +36,8 @@ lib/lib$(TARGET).a: $(OFILES)
 
 docs:
 	rm -fr docs
-	mkdir -p $(DOXY_OUT)
-	doxygen Doxyfile
-	mv $(DOXY_OUT)/html docs
+	doxygen doxygen/Doxyfile
+	mv doxygen/html docs
 
 clean:
 	rm -fr $(BUILD) lib
