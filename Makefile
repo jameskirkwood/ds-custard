@@ -3,10 +3,9 @@
 #------------------------------------------------------------------------------
 
 TARGET    := custard
-SOURCES   := source
 BUILD     := build
 
-INCLUDE   := $(foreach dir,$(SOURCES),-I$(dir)) -I$(BUILD) -Iinclude
+INCLUDE   := -I$(BUILD) -Iinclude
 ARCH	  := -mthumb -mthumb-interwork -march=armv5te -mtune=arm946e-s
 CFLAGS    := -Wall -O2 -fomit-frame-pointer -ffast-math
 CXXFLAGS  := -std=c++17
@@ -18,9 +17,9 @@ LIBS      :=
 # files
 #------------------------------------------------------------------------------
 
-CFILES    := $(shell find $(SOURCES) -name '*.c')
-CPPFILES  := $(shell find $(SOURCES) -name '*.cpp')
-SFILES    := $(shell find $(SOURCES) -name '*.s')
+CFILES    := $(shell find include -name '*.c')
+CPPFILES  := $(shell find include -name '*.cpp')
+SFILES    := $(shell find include -name '*.s')
 
 OFILES    := $(CPPFILES:%.cpp=$(BUILD)/%.o)
 OFILES    += $(CFILES:%.c=$(BUILD)/%.o)
