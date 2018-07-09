@@ -36,7 +36,7 @@ namespace custard {
     // Map VRAM Banks to MAIN ENGINE regions
     //-------------------------------------------------------------------------
 
-    struct main : public _vram_helper {
+    struct main : private _vram_helper {
 
       // Choosing a VRAM mapping for the main engine is quite complicated, as
       // there is a great degree of flexibility.
@@ -99,7 +99,7 @@ namespace custard {
         // Map VRAM Banks to main engine background EXTENDED PALETTES
         //---------------------------------------------------------------------
 
-        struct ext_palette : public _vram_helper {
+        struct ext_palette : private _vram_helper {
 
           static void E() { _vram_helper::E(VRAM_E_BG_EXT_PALETTE); }
 
@@ -124,7 +124,7 @@ namespace custard {
         // Map VRAM Banks to main engine sprite EXTENDED PALETTES
         //---------------------------------------------------------------------
 
-        struct ext_palette : public _vram_helper {
+        struct ext_palette : private _vram_helper {
 
           static void F() { _vram_helper::F(VRAM_F_SPRITE_EXT_PALETTE); }
           static void G() { _vram_helper::G(VRAM_G_SPRITE_EXT_PALETTE); }
@@ -136,7 +136,7 @@ namespace custard {
     // Map VRAM Banks to SUB ENGINE regions
     //-------------------------------------------------------------------------
 
-    struct sub : public _vram_helper {
+    struct sub : private _vram_helper {
 
       // Choosing a VRAM mapping for the sub engine is straightforward:
       // There are only a few possible configurations.
@@ -144,14 +144,14 @@ namespace custard {
       // Map VRAM Banks to sub engine BACKGROUND GRAPHICS
       //-----------------------------------------------------------------------
 
-      struct bg : public _vram_helper {
+      struct bg : private _vram_helper {
 
         static void H_32() { H(VRAM_H_SUB_BG); }
         static void I_16_0x8000() { I(VRAM_I_SUB_BG_0x06208000); }
         static void HI_48() { H_32(); I_16_0x8000(); }
         static void C_128() { C(VRAM_C_SUB_BG); }
 
-        struct ext_palette : public _vram_helper {
+        struct ext_palette : private _vram_helper {
 
           static void H() { _vram_helper::H(VRAM_H_SUB_BG_EXT_PALETTE); }
         };
@@ -162,12 +162,12 @@ namespace custard {
       // Map VRAM Banks to sub engine SPRITE GRAPHICS
       //-----------------------------------------------------------------------
 
-      struct sprite : public _vram_helper {
+      struct sprite : private _vram_helper {
 
         static void I_16() { I(VRAM_I_SUB_SPRITE); }
         static void D_128() { D(VRAM_D_SUB_SPRITE); }
 
-        struct ext_palette : public _vram_helper {
+        struct ext_palette : private _vram_helper {
 
           static void I() { _vram_helper::I(VRAM_I_SUB_SPRITE_EXT_PALETTE); }
         };
@@ -205,7 +205,7 @@ namespace custard {
     // Map VRAM Banks to "LCDC mode" VRAM blocks
     //-------------------------------------------------------------------------
 
-    struct lcdc : public _vram_helper {
+    struct lcdc : private _vram_helper {
 
       static void A() { _vram_helper::A(0); }
       static void B() { _vram_helper::B(0); }
