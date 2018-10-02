@@ -3,6 +3,7 @@
 PROJECT_NAME           = Custard
 PROJECT_NUMBER         = prerelease
 PROJECT_BRIEF          = "C++ Goodies for Nintendo DS Homebrew Development"
+PROJECT_LOGO           = doxygen/custard.png
 
 OUTPUT_DIRECTORY       = doxygen
 OUTPUT_LANGUAGE        = English
@@ -26,5 +27,6 @@ LAYOUT_FILE            = doxygen/DoxygenLayout.xml
 HTML_COLORSTYLE_HUE    = 48
 HTML_COLORSTYLE_SAT    = 160
 HTML_COLORSTYLE_GAMMA  = 100
+HTML_EXTRA_STYLESHEET  = doxygen/custard.css
 
 INCLUDE_PATH           = build
