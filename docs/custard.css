@@ -1,0 +1,31 @@
+#projectbrief {
+	color: #866B0F;
+	font: 11pt Helvetica;
+}
+
+#projectname {
+	color: #283a5d;
+	font: 25pt Palatino;
+}
+
+#projectnumber {
+	font: 14pt Courier;
+}
+
+#projectlogo img {
+	width: 64px;
+	height: 64px;
+
+	/* Thanks Tom Bennet, https://builtvisible.com/image-scaling-in-css/ */
+	-ms-interpolation-mode: nearest-neighbor; /* IE 7+ (non-standard property) */
+	image-rendering: -webkit-optimize-contrast; /* Safari 6, UC Browser 9.9 */
+	image-rendering: -webkit-crisp-edges; /* Safari 7+ */
+	image-rendering: -moz-crisp-edges; /* Firefox 3.6+ */
+	image-rendering: -o-crisp-edges; /* Opera 12 */
+	image-rendering: pixelated; /* Chrome 41+ and Opera 26+ */
+}
+
+#titlearea {
+	padding: 4px;
+	background-color: #F5EDD0;
+}

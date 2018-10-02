@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['custard',['Custard',['../index.html',1,'']]]
+  ['custard_20documentation',['Custard Documentation',['../index.html',1,'']]]
 ];
